@@ -1,14 +1,14 @@
 
 # Welcome to build environment in AWS
 This page contains instructionsto implement multifactor on your bastion host.
+
 ## Install EPEL Repo on the EC2 instance
 
 Google Authenticator is part of the EPEL repo and you should install the EPEL repo in your EC2 instance.
-
 In my case, I am using Amazon EC2 Instance (OS) and I can download my EPEL 7 and install like this
-
+**
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-
+**
  
 
 ## Installing Google Authenticator on EC2 Instance
