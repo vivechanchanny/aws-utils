@@ -13,7 +13,7 @@ The examples in this folder contains instructions to quickly [install LAMP stack
 Either use the fully automated approach or manually execute the commands
 ## Automated Approach
 - Login to bastion host and set the following env variables.
-  - export MYSQLROOTPASSWORD=CHANGEME_PASSWORD
+  - export MYSQLROOTPASSWORD=Abcd1234
   - export ANSIBLE_HOST_KEY_CHECKING=false
   - export LAMPINSTNAME=lampinst
 - wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/ansible-setup.yml -O ansible-setup.yml
