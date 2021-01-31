@@ -44,7 +44,7 @@
        force: yes
 
   - name: SSH access to bastion
-    shell: bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-secgrp 22
+    shell: bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-securitygrp 22
     ignore_errors: yes
 
   - name: port 80 access to loadbalancer

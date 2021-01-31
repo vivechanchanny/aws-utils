@@ -11,7 +11,7 @@ This page contains instructions to create lamp stack using cloud formation templ
 
 - Login to Bastion host
 - Set the following variables to approapriate values
-  - export BASTION_SECURITY_GROUP=outgoing-from-bastion-secgrp
+  - export BASTION_SECURITY_GROUP=outgoing-from-bastion-securitygrp
   - export DBRootPassword=Abcd1234 
   - export MYSSHKEYNAME=bastion-to-otherhosts-key
   - export DBPassword=Abcd1234

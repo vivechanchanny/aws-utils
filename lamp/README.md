@@ -44,7 +44,7 @@ Create  instance
 ###  Allow access to bastion and loadbalancer
 - Login to bastion host
 - wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/utils/add-ingress-to-secgrp.sh -O add-ingress-to-secgrp.sh
-- bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-secgrp 22
+- bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-securitygrp 22
 - bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-loadbalancer-secgrp 80
 - bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-loadbalancer-secgrp 443
 
