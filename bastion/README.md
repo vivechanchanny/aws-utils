@@ -62,6 +62,8 @@ Ideally bastion host must be hardened and must not run any additional software. 
 - update the /etc/haproxy/haproxy.cfg by changing all occurrences of apacheserver.local with with the private IP address of the lamp instance.
 - systemctl restart haproxy
 - systemctl enable haproxy
+- to check the status of haproxy
+- systemctl status haproxy.service
 ### Configure TLS
 Below instructions were derived from [this documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-centos-7)
 - Update **yourdomain** to point the public IP of the host on which haproxy is running. If you don't have a domain [register a new one](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html)
