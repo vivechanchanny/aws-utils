@@ -32,7 +32,7 @@ Use these steps if you prefer not to use the fully automated approach.
 Create  instance
 - Login to bastion host
 - Set environment varaible to the SSH key name used to SSH from bastion
-  - export MYSSHKEYNAME=bastion-to-other-hosts-key
+  - export MYSSHKEYNAME=bastion-to-otherhosts-key
 - wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/create-instance.sh -O create-instance.sh
 - bash create-instance.sh
 ### Create AWS Linux2 Instance using GUI

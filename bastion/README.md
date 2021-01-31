@@ -31,11 +31,11 @@ We would be launching insstances using this bastion host. So enable programatic 
 ### Configure SSH keys
 SSH access to all other hosts should go through Bastion. The private key to login to other hosts should be kept only on Bastion. While creating the instances use this key name.
 - Login to bastion as ec2-user
-- aws ec2 create-key-pair --key-name bastion-to-other-hosts-key --query 'KeyMaterial' --output text > bastion-to-other-hosts-key.pem
+- aws ec2 create-key-pair --key-name bastion-to-otherhosts-key --query 'KeyMaterial' --output text > bastion-to-otherhosts-key.pem
 - copy the private key you donwloaded on your laptop to bastion host.
-  - cp bastion-to-other-hosts-key.pem /home/ec2-user/.ssh/id_rsa
+  - cp bastion-to-otherhosts-key.pem /home/ec2-user/.ssh/id_rsa
 - chmod 0400 /home/ec2-user/.ssh/id_rsa
-- For backup purpose download bastion-to-other-hosts-key.pem from bastion to your laptop and safestore it securely.
+- For backup purpose download bastion-to-otherhosts-key.pem from bastion to your laptop and safestore it securely.
 ### Create security group and attach to bastion instance
 In future when new instances are created allow network access to it from this security group "outgoing-from-bastion-secgrp".
 - Login to bastion as ec2-user

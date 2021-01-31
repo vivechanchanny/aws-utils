@@ -13,7 +13,7 @@ This page contains instructions to create lamp stack using cloud formation templ
 - Set the following variables to approapriate values
   - export BASTION_SECURITY_GROUP=outgoing-from-bastion-secgrp
   - export DBRootPassword=Abcd1234 
-  - export MYSSHKEYNAME=bastion-to-other-hosts-key
+  - export MYSSHKEYNAME=bastion-to-otherhosts-key
   - export DBPassword=Abcd1234
 
 - rm -f cloud-formation.yml && wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp-using-cf/cloud-formation.yml
