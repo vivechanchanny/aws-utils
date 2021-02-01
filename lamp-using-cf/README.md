@@ -1,7 +1,7 @@
 # LAMP stack using cloud formation
 This page contains instructions to create lamp stack using cloud formation template
 ## Prep steps
-- Make sure bastion host is configured properly https://github.com/vivechanchanny/aws-utils/blob/main/bastion/README.md#configure-bastion
+- Make sure bastion host is configured properly https://github.com/vivechanchanny/wordpress-serverlesss/blob/main/bastion/README.md#configure-bastion
   - for programmatic access
   - ssh key based login to other hosts.
   - security group to allow login to other hosts.
@@ -11,12 +11,12 @@ This page contains instructions to create lamp stack using cloud formation templ
 
 - Login to Bastion host
 - Set the following variables to approapriate values
-  - export BASTION_SECURITY_GROUP=outgoing-from-bastion-securitygrp
+  - export BASTION_SECURITY_GROUP=outgoing-from-bastion-secgrp
   - export DBRootPassword=Abcd1234 
-  - export MYSSHKEYNAME=bastion-to-otherhosts-key
+  - export MYSSHKEYNAME=bastion-to-other-hosts-key
   - export DBPassword=Abcd1234
 
-- rm -f cloud-formation.yml && wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp-using-cf/cloud-formation.yml
+- rm -f cloud-formation.yml && wget https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp-using-cf/cloud-formation.yml
 - aws cloudformation validate-template --template-body file://cloud-formation.yml
 
 ###  Create instance 
@@ -26,5 +26,5 @@ This page contains instructions to create lamp stack using cloud formation templ
 ###  Configure LAMP 
 - Find out the IP of the new instance created
 - ssh ec2-user@newip
-- Follow the instructions here to configure LAMP https://github.com/vivechanchanny/aws-utils/tree/main/lamp
+- Follow the instructions here to configure LAMP https://github.com/vivechanchanny/wordpress-serverlesss/tree/main/lamp
 

@@ -3,20 +3,20 @@
   # Downlaod the script to create instance
   - name: download create-instance.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/create-instance.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/create-instance.sh
        dest: .
        force: yes
 
-  # Run create instance. The newly created instance is configure with ssh public key bastion-to-otherhosts-key
+  # Run create instance. The newly created instance is configure with ssh public key bastion-to-other-hosts-key
   - name: run create-instance.sh
     shell: bash create-instance.sh
     environment:
-        MYSSHKEYNAME: 'bastion-to-otherhosts-key'
+        MYSSHKEYNAME: 'bastion-to-other-hosts-key'
         LAMPINSTNAME: "{{LAMPINSTNAME}}"
         
   - name: download get-private-ip.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/utils/get-private-ip.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/get-private-ip.sh
        dest: .
        force: yes
 
@@ -39,12 +39,12 @@
     
   - name: download add-ingress-to-secgrp.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/utils/add-ingress-to-secgrp.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/utils/add-ingress-to-secgrp.sh
        dest: .
        force: yes
 
   - name: SSH access to bastion
-    shell: bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-securitygrp 22
+    shell: bash add-ingress-to-secgrp.sh lamp-secgrp outgoing-from-bastion-secgrp 22
     ignore_errors: yes
 
   - name: port 80 access to loadbalancer
@@ -61,7 +61,7 @@
   
   - name: download cloud-init
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/cloud-init.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/cloud-init.sh
        dest: .
        force: yes
 
@@ -71,7 +71,7 @@
     
   - name: download configure apache
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/configure-apache.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-apache.sh
        dest: .
        force: yes
 
@@ -80,7 +80,7 @@
 
   - name: download configure-tls.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/configure-tls.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/configure-tls.sh
        dest: .
        force: yes
 
@@ -89,7 +89,7 @@
 
   - name: download configure-tls.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/secure-db.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/secure-db.sh
        dest: .
        force: yes
        
@@ -101,7 +101,7 @@
 
   - name: download phpAdmin-install-config.sh
     get_url:
-       url: https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/lamp/phpAdmin-install-config.sh
+       url: https://raw.githubusercontent.com/vivechanchanny/wordpress-serverlesss/main/lamp/phpAdmin-install-config.sh
        dest: .
        force: yes
 
