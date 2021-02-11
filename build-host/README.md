@@ -2,7 +2,7 @@
 This page contains instructions to create a build host to build web applications using maven and containerize it.
 
 ## Prep steps
-- Make sure bastion host is configured properly https://github.com/vivechanchanny/aws-utils/blob/main/bastion/README.md#configure-bastion
+- Make sure bastion host is configured properly https://github.com/praveensiddu/aws/blob/main/bastion/README.md#configure-bastion
   - for programmatic access
   - ssh key based login to other hosts.
   - security group to allow login to other hosts.
@@ -14,7 +14,7 @@ Either use the fully automated approach or manually execute the commands
 - Login to bastion host and set the following env variables.
   - export ANSIBLE_HOST_KEY_CHECKING=false
   - export INSTNAME=build-host
-- wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/build-host/ansible-setup.yml -O ansible-setup.yml
+- wget https://raw.githubusercontent.com/praveensiddu/aws/main/build-host/ansible-setup.yml -O ansible-setup.yml
 - ansible-playbook  -u ubuntu  -e  "INSTNAME=$INSTNAME"  ansible-setup.yml
 - export INST_IP=$(bash get-private-ip.sh $INSTNAME)
 
@@ -24,13 +24,13 @@ Either use the fully automated approach or manually execute the commands
 - mvn clean
 - mvn package
    and the war file will be built in target/SimpleServlet-1.war
-- wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/build-host/docker-compose.yml -O docker-compose.yml
+- wget https://raw.githubusercontent.com/praveensiddu/aws/main/build-host/docker-compose.yml -O docker-compose.yml
 - sudo docker-compose up
 - curl localhost:8080/hello
 - 
 
 # Build docker image
-- wget https://raw.githubusercontent.com/vivechanchanny/aws-utils/main/build-host/Dockerfile -O Dockerfile
+- wget https://raw.githubusercontent.com/praveensiddu/aws/main/build-host/Dockerfile -O Dockerfile
 - sudo docker build -t mywebapp .
 - sudo docker run -d -p 80:8080 mywebapp
 
